@@ -10,7 +10,8 @@
   "checksums": {
     "Modulefile": "24944c36d261b5e10ddf6c84c1050af9",
     "README.md": "ae32dff3ec45c0caad52405dc1b59968",
-    "manifests/init.pp": "16507b0e3f0606c13f38bb2349db9ca6",
+    "manifests/init.pp": "b775087d1c6b20504baa643f0f40d4e2",
+    "manifests/instance.pp": "bbced09375c7035512e4d2c9a082e6e0",
     "spec/spec_helper.rb": "a55d1e6483344f8ec6963fcb2c220372",
     "tests/init.pp": "e20dee97777445702e4aa27c15642a32"
   },
