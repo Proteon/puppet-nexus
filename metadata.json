@@ -12,7 +12,7 @@
     "README.md": "ae32dff3ec45c0caad52405dc1b59968",
     "manifests/init.pp": "16507b0e3f0606c13f38bb2349db9ca6",
     "spec/spec_helper.rb": "a55d1e6483344f8ec6963fcb2c220372",
-    "tests/init.pp": "46c69bc23617dd8e8244f946919d1cfe"
+    "tests/init.pp": "e20dee97777445702e4aa27c15642a32"
   },
   "dependencies": [
     {
