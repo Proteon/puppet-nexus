@@ -1,0 +1,23 @@
+{
+  "name": "proteon-nexus",
+  "author": "Proteon",
+  "description": "Puppet code for deploying and configuring Nexus (Sonatype) on Tomcat.",
+  "license": "Apache License, Version 2.0",
+  "project_page": "https://github.com/Proteon/puppet-nexus",
+  "source": "git@github.com:Proteon/puppet-nexus.git",
+  "summary": "Puppet code for deploying and configuring Nexus (Sonatype) on Tomcat and the use of artifacts",
+  "version": "0.1.0",
+  "checksums": {
+    "Modulefile": "24944c36d261b5e10ddf6c84c1050af9",
+    "README.md": "ae32dff3ec45c0caad52405dc1b59968",
+    "manifests/init.pp": "16507b0e3f0606c13f38bb2349db9ca6",
+    "spec/spec_helper.rb": "a55d1e6483344f8ec6963fcb2c220372",
+    "tests/init.pp": "46c69bc23617dd8e8244f946919d1cfe"
+  },
+  "dependencies": [
+    {
+      "name": "proteon/tomcat",
+      "version_requirement": "\u003e\u003d0.1.1"
+    }
+  ]
+}

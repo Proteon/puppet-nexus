@@ -1,41 +1,37 @@
-# == Class: nexus
-#
-# Full description of class nexus here.
+# == Resource: nexus
 #
 # === Parameters
 #
-# Document parameters here.
-#
-# [*sample_parameter*]
-#   Explanation of what this parameter affects and what it defaults to.
-#   e.g. "Specify one or more upstream ntp servers as an array."
+# [*instance*]  The instance this nexus should be installed in (see tomcat::instance). This instance will be created if not defined
+# separatly.
+# [*version*]   The version of nexus to install (maven artifact version).
 #
 # === Variables
-#
-# Here you should define a list of variables that this module would require.
-#
-# [*sample_variable*]
-#   Explanation of how this variable affects the funtion of this class and if it
-#   has a default. e.g. "The parameter enc_ntp_servers must be set by the
-#   External Node Classifier as a comma separated list of hostnames." (Note,
-#   global variables should not be used in preference to class parameters  as of
-#   Puppet 2.6.)
 #
 # === Examples
 #
 #  class { nexus:
-#    servers => [ 'pool.ntp.org', 'ntp.local.company.com' ]
+#    instance => 'tomcat_1',
+#    version  => '2.3.1-01',
 #  }
 #
 # === Authors
 #
-# Author Name <author@domain.com>
+# Sander Bilo <sander@proteon.nl>
 #
 # === Copyright
 #
-# Copyright 2013 Your name here, unless otherwise noted.
+# Copyright 2013 Proteon.
 #
-class nexus {
+define nexus ($instance = $name, $version = 'LATEST') {
+    if (!defined(Tomcat::Instance[$instance])) {
+        tomcat::instance { $instance: }
+    }
 
-
+    tomcat::webapp::maven { 'ROOT':
+        instance   => $instance,
+        groupid    => 'org.sonatype.nexus',
+        artifactid => 'nexus-webapp',
+        version    => $version,
+    }
 }
