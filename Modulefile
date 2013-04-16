@@ -4,7 +4,7 @@ version '0.1.0'
 author 'Proteon'
 license 'Apache License, Version 2.0'
 project_page 'https://github.com/Proteon/puppet-nexus'
-source 'git@github.com:Proteon/puppet-nexus.git'
+source 'https://github.com/Proteon/puppet-nexus.git'
 summary 'Puppet code for deploying and configuring Nexus (Sonatype) on Tomcat and the use of artifacts'
 description 'Puppet code for deploying and configuring Nexus (Sonatype) on Tomcat.'
 
