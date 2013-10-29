@@ -11,4 +11,4 @@ description 'Puppet code for deploying and configuring Nexus (Sonatype) on Tomca
 # Librarian-puppet does not appear to like dependencies which are not in (a)
 # forge. You can find these dependencies at:
 # https://github.com/Proteon/puppet-*
-#dependency 'proteon/tomcat', '>=0.1.1'
+dependency 'proteon/tomcat', '>=0.1.15'

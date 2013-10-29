@@ -23,12 +23,26 @@
 #
 # Copyright 2013 Proteon.
 #
-define nexus::instance ($instance = $name, $version = 'LATEST') {
-    if (!defined(Tomcat::Instance[$instance])) {
-        tomcat::instance { $instance: }
+define nexus::instance (
+    $instance = $name,
+    $version  = 'RELEASE') {
+
+    if ($version == 'RELEASE') {
+        warning('Using \'RELEASE\' as version for Nexus may have unwanted consequences, please specify a version number')
     }
 
-    tomcat::webapp::maven { 'ROOT':
+    if ($version >= '2.6.0-01') {
+        $java_version = 'oracle_1_7_0'
+    } else {
+        $java_version = 'oracle_1_6_0'
+    }
+
+    if (!defined(Tomcat::Instance[$instance])) {
+        tomcat::instance { $instance: java_version => $java_version }
+    }
+
+    tomcat::webapp::maven { "${instance}:ROOT":
+        webapp     => 'ROOT',
         instance   => $instance,
         groupid    => 'org.sonatype.nexus',
         artifactid => 'nexus-webapp',
