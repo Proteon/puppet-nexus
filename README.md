@@ -22,7 +22,7 @@ To customize the settings of the tomcat installation create your own instance of
     tomcat::instance { 'nexus_1': 
         java_version => 'oracle_1_7_0',
         max_heap     => '4096m',
-    } ->
+    }
     
     nexus::instance { 'nexus_1': 
         version => '2.6.4-02',
